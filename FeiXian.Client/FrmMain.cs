@@ -9,13 +9,13 @@ using NewLife.Net;
 using NewLife.Reflection;
 using NewLife.Remoting;
 using NewLife.Threading;
+using XCode.DataAccessLayer;
 
 namespace FeiXian.Client
 {
     public partial class FrmMain : Form
     {
-        //LinkClient _Client;
-        IPacket _Packet;
+        DAL Dal;
 
         #region 窗体
         public FrmMain()
@@ -38,7 +38,6 @@ namespace FeiXian.Client
             gbSend.Tag = gbSend.Text;
 
             var cfg = Setting.Current;
-            cbMode.SelectedItem = cfg.Mode;
 
             if (cfg.IsNew) "代码之巅，天外飞仙！".SpeechTip();
 
@@ -67,7 +66,7 @@ namespace FeiXian.Client
             numSleep.Value = cfg.SendSleep;
             numThreads.Value = cfg.SendUsers;
 
-            cbAddr.DataSource = cfg.GetAddresss();
+            cbConn.DataSource = DAL.ConnStrs.Keys.ToList();
         }
 
         void SaveConfig()
@@ -87,9 +86,6 @@ namespace FeiXian.Client
             cfg.SendUsers = (Int32)numThreads.Value;
             cfg.ColorLog = mi日志着色.Checked;
 
-            cfg.Mode = cbMode.Text;
-            cfg.AddAddresss(cbAddr.Text);
-
             cfg.Save();
         }
         #endregion
@@ -99,11 +95,24 @@ namespace FeiXian.Client
         {
             SaveConfig();
 
-            //var btn = sender as Button;
-            //if (btn.Text == "打开")
-            //    Connect();
-            //else
-            //    Disconnect();
+            if (btnConnect.Text == "打开")
+            {
+                var name = cbConn.Text;
+                if (name.IsNullOrEmpty()) return;
+
+                Dal = DAL.Create(name);
+                XTrace.WriteLine("连接[{0}] 数据库[{1}] {2}", Dal.ConnName, Dal.DbType, Dal.ConnStr);
+
+                pnlSetting.Enabled = false;
+                pnlAction.Enabled = true;
+                btnConnect.Text = "关闭";
+            }
+            else
+            {
+                pnlSetting.Enabled = true;
+                pnlAction.Enabled = false;
+                btnConnect.Text = "打开";
+            }
         }
 
         /// <summary>业务日志输出</summary>

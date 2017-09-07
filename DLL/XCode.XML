@@ -713,6 +713,165 @@
         <member name="P:XCode.DataAccessLayer.Transaction.Log">
             <summary>日志</summary>
         </member>
+        <member name="P:XCode.DataAccessLayer.Access.Type">
+            <summary>返回数据库类型。外部DAL数据库类请使用Other</summary>
+        </member>
+        <member name="P:XCode.DataAccessLayer.Access.Factory">
+            <summary>工厂</summary>
+        </member>
+        <member name="M:XCode.DataAccessLayer.Access.OnCreateSession">
+            <summary>创建数据库会话</summary>
+            <returns></returns>
+        </member>
+        <member name="M:XCode.DataAccessLayer.Access.OnCreateMetaData">
+            <summary>创建元数据对象</summary>
+            <returns></returns>
+        </member>
+        <member name="P:XCode.DataAccessLayer.Access.LongTextLength">
+            <summary>长文本长度</summary>
+        </member>
+        <member name="M:XCode.DataAccessLayer.Access.FormatDateTime(System.DateTime)">
+            <summary>格式化时间为SQL字符串</summary>
+            <param name="dateTime">时间值</param>
+            <returns></returns>
+        </member>
+        <member name="M:XCode.DataAccessLayer.Access.FormatKeyWord(System.String)">
+            <summary>格式化关键字</summary>
+            <param name="keyWord">关键字</param>
+            <returns></returns>
+        </member>
+        <member name="M:XCode.DataAccessLayer.Access.FormatValue(XCode.DataAccessLayer.IDataColumn,System.Object)">
+            <summary>格式化数据为SQL数据</summary>
+            <param name="field">字段</param>
+            <param name="value">数值</param>
+            <returns></returns>
+        </member>
+        <member name="M:XCode.DataAccessLayer.Access.CheckSupport">
+            <summary>是否支持</summary>
+        </member>
+        <member name="T:XCode.DataAccessLayer.AccessSession">
+            <summary>Access数据库</summary>
+        </member>
+        <member name="M:XCode.DataAccessLayer.AccessSession.Open">
+            <summary>打开。已重写，为了建立数据库</summary>
+        </member>
+        <member name="M:XCode.DataAccessLayer.AccessSession.InsertAndGetIdentity(System.String,System.Data.CommandType,System.Data.IDataParameter[])">
+            <summary>执行插入语句并返回新增行的自动编号</summary>
+            <param name="sql">SQL语句</param>
+            <param name="type">命令类型，默认SQL文本</param>
+            <param name="ps">命令参数</param>
+            <returns>新增行的自动编号</returns>
+        </member>
+        <member name="T:XCode.DataAccessLayer.AccessMetaData">
+            <summary>Access元数据</summary>
+        </member>
+        <member name="M:XCode.DataAccessLayer.AccessMetaData.GetIndexes(XCode.DataAccessLayer.IDataTable,System.Data.DataTable,System.Data.DataTable)">
+            <summary>获取索引</summary>
+            <param name="table"></param>
+            <param name="indexes">索引</param>
+            <param name="indexColumns">索引列</param>
+            <returns></returns>
+        </member>
+        <member name="F:XCode.DataAccessLayer.AccessMetaData._DataTypes">
+            <summary>数据类型映射</summary>
+        </member>
+        <member name="T:XCode.DataAccessLayer.SqlCe">
+            <summary>SqlCe数据库。由 @Goon(12600112) 测试并完善正向反向工程</summary>
+        </member>
+        <member name="P:XCode.DataAccessLayer.SqlCe.Type">
+            <summary>返回数据库类型。外部DAL数据库类请使用Other</summary>
+        </member>
+        <member name="P:XCode.DataAccessLayer.SqlCe.DbProviderFactory">
+            <summary>SqlCe提供者工厂</summary>
+        </member>
+        <member name="P:XCode.DataAccessLayer.SqlCe.Factory">
+            <summary>工厂</summary>
+        </member>
+        <member name="P:XCode.DataAccessLayer.SqlCe.SqlCeProviderVersion">
+            <summary>SqlCe提供者版本</summary>
+        </member>
+        <member name="P:XCode.DataAccessLayer.SqlCe.SqlCeVer">
+            <summary>SqlCe版本,默认4.0</summary>
+        </member>
+        <member name="M:XCode.DataAccessLayer.SqlCe.OnCreateSession">
+            <summary>创建数据库会话</summary>
+            <returns></returns>
+        </member>
+        <member name="M:XCode.DataAccessLayer.SqlCe.OnCreateMetaData">
+            <summary>创建元数据对象</summary>
+            <returns></returns>
+        </member>
+        <member name="M:XCode.DataAccessLayer.SqlCe.FormatKeyWord(System.String)">
+            <summary>格式化关键字</summary>
+            <param name="keyWord">关键字</param>
+            <returns></returns>
+        </member>
+        <member name="T:XCode.DataAccessLayer.SqlCeSession">
+            <summary>SqlCe会话</summary>
+        </member>
+        <member name="M:XCode.DataAccessLayer.SqlCeSession.InsertAndGetIdentity(System.String,System.Data.CommandType,System.Data.IDataParameter[])">
+            <summary>执行插入语句并返回新增行的自动编号</summary>
+            <param name="sql">SQL语句</param>
+            <param name="type">命令类型，默认SQL文本</param>
+            <param name="ps">命令参数</param>
+            <returns>新增行的自动编号</returns>
+        </member>
+        <member name="M:XCode.DataAccessLayer.SqlCeSession.GetSchema(System.String,System.String[])">
+            <summary>返回数据源的架构信息</summary>
+            <param name="collectionName">指定要返回的架构的名称。</param>
+            <param name="restrictionValues">为请求的架构指定一组限制值。</param>
+            <returns></returns>
+        </member>
+        <member name="T:XCode.DataAccessLayer.SqlCeMetaData">
+            <summary>SqlCe元数据</summary>
+        </member>
+        <member name="M:XCode.DataAccessLayer.SqlCeMetaData.GetIndexes(XCode.DataAccessLayer.IDataTable,System.Data.DataTable,System.Data.DataTable)">
+            <summary>获取索引</summary>
+            <param name="table"></param>
+            <param name="indexes">索引</param>
+            <param name="indexColumns">索引列</param>
+            <returns></returns>
+        </member>
+        <member name="F:XCode.DataAccessLayer.SqlCeMetaData._DataTypes">
+            <summary>数据类型映射</summary>
+        </member>
+        <member name="T:XCode.DataAccessLayer.SQLCEVersion">
+            <summary>SqlCe版本</summary>
+        </member>
+        <member name="F:XCode.DataAccessLayer.SQLCEVersion.SQLCE20">
+            <summary>Sqlce Ver2.0</summary>
+        </member>
+        <member name="F:XCode.DataAccessLayer.SQLCEVersion.SQLCE30">
+            <summary>Sqlce Ver3.0</summary>
+        </member>
+        <member name="F:XCode.DataAccessLayer.SQLCEVersion.SQLCE35">
+            <summary>Sqlce Ver3.5</summary>
+        </member>
+        <member name="F:XCode.DataAccessLayer.SQLCEVersion.SQLCE40">
+            <summary>Sqlce Ver4.0</summary>
+        </member>
+        <member name="T:XCode.DataAccessLayer.SqlCeHelper">
+            <summary>SqlCe辅助类</summary>
+        </member>
+        <member name="M:XCode.DataAccessLayer.SqlCeHelper.DetermineVersion(System.String)">
+            <summary>检查给定SqlCe文件的版本</summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:XCode.DataAccessLayer.SqlCeHelper.IsV35Installed">
+            <summary>检测SqlServerCe3.5是否安装</summary>
+            <returns></returns>
+        </member>
+        <member name="M:XCode.DataAccessLayer.SqlCeHelper.IsV40Installed">
+            <summary>检测SqlServerCe4是否安装</summary>
+            <returns></returns>
+        </member>
+        <member name="P:XCode.DataAccessLayer.SqlCeEngine.EngineType">
+            <summary></summary>
+        </member>
+        <member name="P:XCode.DataAccessLayer.SqlCeEngine.Engine">
+            <summary>引擎</summary>
+        </member>
         <member name="T:XCode.DataAccessLayer.IModelResolver">
             <summary>模型解析器接口。解决名称大小写、去前缀、关键字等多个问题</summary>
         </member>
@@ -777,11 +936,61 @@
         <member name="P:XCode.DataAccessLayer.ModelResolver.Current">
             <summary>当前名称解析器</summary>
         </member>
+        <member name="T:XCode.DataAccessLayer.MSPageSplit">
+            <summary>MS系列数据库分页算法</summary>
+        </member>
+        <member name="M:XCode.DataAccessLayer.MSPageSplit.PageSplit(XCode.DataAccessLayer.SelectBuilder,System.Int64,System.Int64,System.Boolean,System.Func{XCode.DataAccessLayer.SelectBuilder,System.Int64})">
+            <summary>分页算法</summary>
+            <remarks>
+            builder里面必须含有排序，否则就要通过key指定主键，否则大部分算法不能使用，会导致逻辑数据排序不正确。
+            其实，一般数据都是按照聚集索引排序，而聚集索引刚好也就是主键。
+            所以，只要设置的Key顺序跟主键顺序一致，就没有问题。
+            如果，Key指定了跟主键不一致的顺序，那么查询语句一定要指定同样的排序。
+            </remarks>
+            <param name="builder"></param>
+            <param name="startRowIndex"></param>
+            <param name="maximumRows"></param>
+            <param name="isSql2005"></param>
+            <param name="queryCountCallback">查询总记录数的委托，近供DoubleTop使用</param>
+            <returns></returns>
+        </member>
+        <member name="M:XCode.DataAccessLayer.MSPageSplit.TopNotIn(XCode.DataAccessLayer.SelectBuilder,System.Int64,System.Int64)">
+            <summary>最经典的NotIn分页，通用但是效率最差。只需指定一个排序列。</summary>
+            <param name="builder">查询生成器</param>
+            <param name="startRowIndex">开始行，0表示第一行</param>
+            <param name="maximumRows">最大返回行数，0表示所有行</param>
+            <returns>分页SQL</returns>
+        </member>
+        <member name="M:XCode.DataAccessLayer.MSPageSplit.DoubleTop(XCode.DataAccessLayer.SelectBuilder,System.Int64,System.Int64,System.Func{XCode.DataAccessLayer.SelectBuilder,System.Int64})">
+            <summary>双Top分页，因为没有使用not in，性能比NotIn要好。语句必须有排序，不需额外指定排序列</summary>
+            <param name="builder"></param>
+            <param name="startRowIndex"></param>
+            <param name="maximumRows"></param>
+            <param name="queryCountCallback">查询总记录数的委托，近供DoubleTop使用</param>
+            <returns></returns>
+        </member>
+        <member name="M:XCode.DataAccessLayer.MSPageSplit.MaxMin(XCode.DataAccessLayer.SelectBuilder,System.Int64,System.Int64)">
+            <summary>按唯一数字最大最小分页，性能很好。必须指定一个数字型排序列。</summary>
+            <param name="builder">查询生成器</param>
+            <param name="startRowIndex">开始行，0表示第一行</param>
+            <param name="maximumRows">最大返回行数，0表示所有行</param>
+            <returns>分页SQL</returns>
+        </member>
+        <member name="M:XCode.DataAccessLayer.MSPageSplit.RowNumber(XCode.DataAccessLayer.SelectBuilder,System.Int64,System.Int64)">
+            <summary>RowNumber分页算法</summary>
+            <param name="builder">查询生成器</param>
+            <param name="startRowIndex">开始行，0表示第一行</param>
+            <param name="maximumRows">最大返回行数，0表示所有行</param>
+            <returns></returns>
+        </member>
         <member name="T:XCode.DataAccessLayer.DatabaseType">
             <summary>数据库类型</summary>
         </member>
         <member name="F:XCode.DataAccessLayer.DatabaseType.None">
             <summary>无效值</summary>
+        </member>
+        <member name="F:XCode.DataAccessLayer.DatabaseType.Access">
+            <summary>MS的Access文件数据库</summary>
         </member>
         <member name="F:XCode.DataAccessLayer.DatabaseType.SqlServer">
             <summary>MS的SqlServer数据库</summary>
@@ -791,6 +1000,9 @@
         </member>
         <member name="F:XCode.DataAccessLayer.DatabaseType.MySql">
             <summary>MySql数据库</summary>
+        </member>
+        <member name="F:XCode.DataAccessLayer.DatabaseType.SqlCe">
+            <summary>SqlCe数据库</summary>
         </member>
         <member name="F:XCode.DataAccessLayer.DatabaseType.SQLite">
             <summary>SQLite数据库</summary>

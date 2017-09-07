@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.label7 = new System.Windows.Forms.Label();
-            this.cbAddr = new System.Windows.Forms.ComboBox();
+            this.cbConn = new System.Windows.Forms.ComboBox();
             this.lbAddr = new System.Windows.Forms.Label();
             this.gbSend = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -45,7 +45,6 @@
             this.miHexSend = new System.Windows.Forms.ToolStripMenuItem();
             this.mi清空2 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlSetting = new System.Windows.Forms.Panel();
-            this.cbMode = new System.Windows.Forms.ComboBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.gbReceive = new System.Windows.Forms.GroupBox();
@@ -89,24 +88,25 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "次数：";
             // 
-            // cbAddr
+            // cbConn
             // 
-            this.cbAddr.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.cbConn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbAddr.FormattingEnabled = true;
-            this.cbAddr.Location = new System.Drawing.Point(117, 7);
-            this.cbAddr.Name = "cbAddr";
-            this.cbAddr.Size = new System.Drawing.Size(250, 20);
-            this.cbAddr.TabIndex = 10;
+            this.cbConn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbConn.FormattingEnabled = true;
+            this.cbConn.Location = new System.Drawing.Point(65, 7);
+            this.cbConn.Name = "cbConn";
+            this.cbConn.Size = new System.Drawing.Size(250, 20);
+            this.cbConn.TabIndex = 10;
             // 
             // lbAddr
             // 
             this.lbAddr.AutoSize = true;
-            this.lbAddr.Location = new System.Drawing.Point(80, 11);
+            this.lbAddr.Location = new System.Drawing.Point(6, 10);
             this.lbAddr.Name = "lbAddr";
-            this.lbAddr.Size = new System.Drawing.Size(41, 12);
+            this.lbAddr.Size = new System.Drawing.Size(53, 12);
             this.lbAddr.TabIndex = 7;
-            this.lbAddr.Text = "地址：";
+            this.lbAddr.Text = "数据库：";
             // 
             // gbSend
             // 
@@ -258,25 +258,12 @@
             // 
             this.pnlSetting.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlSetting.Controls.Add(this.cbMode);
-            this.pnlSetting.Controls.Add(this.cbAddr);
+            this.pnlSetting.Controls.Add(this.cbConn);
             this.pnlSetting.Controls.Add(this.lbAddr);
             this.pnlSetting.Location = new System.Drawing.Point(6, 12);
             this.pnlSetting.Name = "pnlSetting";
             this.pnlSetting.Size = new System.Drawing.Size(370, 31);
             this.pnlSetting.TabIndex = 18;
-            // 
-            // cbMode
-            // 
-            this.cbMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMode.FormattingEnabled = true;
-            this.cbMode.Items.AddRange(new object[] {
-            "User",
-            "Device"});
-            this.cbMode.Location = new System.Drawing.Point(6, 7);
-            this.cbMode.Name = "cbMode";
-            this.cbMode.Size = new System.Drawing.Size(68, 20);
-            this.cbMode.TabIndex = 12;
             // 
             // gbReceive
             // 
@@ -482,7 +469,7 @@
         #endregion
 
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cbAddr;
+        private System.Windows.Forms.ComboBox cbConn;
         private System.Windows.Forms.Label lbAddr;
         private System.Windows.Forms.GroupBox gbSend;
         private System.Windows.Forms.NumericUpDown numThreads;
@@ -517,7 +504,6 @@
         private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.ToolStripMenuItem mi日志着色;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox cbMode;
         private System.Windows.Forms.Button btnAdv;
     }
 }

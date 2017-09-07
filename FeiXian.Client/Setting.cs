@@ -26,7 +26,7 @@ namespace FeiXian.Client
 
         /// <summary>地址</summary>
         [Description("地址")]
-        public String Address { get; set; } = "tcp://127.0.0.1:2233,tcp://feifan.link:2233";
+        public String Address { get; set; } = "http://feixian.newlifex.com/api";
 
         /// <summary>十六进制显示</summary>
         [Description("十六进制显示")]
@@ -91,31 +91,6 @@ namespace FeiXian.Client
         /// <summary>扩展数据</summary>
         [Description("扩展数据")]
         public String Extend { get; set; } = "";
-        #endregion
-
-        #region 地址
-        public List<String> GetAddresss()
-        {
-            return (Address + "").Split(",").Distinct().ToList();
-        }
-
-        public void AddAddresss(String addr)
-        {
-            if (addr.IsNullOrWhiteSpace()) return;
-
-            //addr = addr.Trim();
-            addr = new NetUri(addr).ToString();
-
-            var list = GetAddresss();
-
-            // 先删除再插入，保持第一位
-            var addrs = new List<String>();
-            addrs.Add(addr);
-            // 最多10个
-            addrs.AddRange(list.Where(e => !e.EqualIgnoreCase(addr)).Take(10 - 1));
-
-            Address = addrs.Join(",");
-        }
         #endregion
     }
 }
