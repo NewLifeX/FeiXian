@@ -66,6 +66,7 @@ namespace FeiXian.Client
             miHexSend.Checked = cfg.HexSend;
             mi日志着色.Checked = cfg.ColorLog;
 
+            txtName.Text = cfg.Name;
             numCount.Value = cfg.Times;
             numBatchSize.Value = cfg.BatchSize;
             numThreads.Value = cfg.Threads;
@@ -85,6 +86,7 @@ namespace FeiXian.Client
             cfg.ShowStat = mi显示统计信息.Checked;
             cfg.HexSend = miHexSend.Checked;
 
+            cfg.Name = txtName.Text;
             cfg.Times = (Int32)numCount.Value;
             cfg.BatchSize = (Int32)numBatchSize.Value;
             cfg.Threads = (Int32)numThreads.Value;
@@ -178,7 +180,7 @@ namespace FeiXian.Client
 
                 this.Invoke(() => btnDbWrite.Enabled = true);
 
-                "测试完成，处理速度{0}tps".F(ds.Score).SpeechTip();
+                "测试完成，处理速度 {0} tps".F(ds.Score).SpeechTip();
 
                 SendScore(Dal.DbType + "_Insert", cfg.Times);
             });
@@ -187,11 +189,13 @@ namespace FeiXian.Client
         private void SendScore(String type, Int32 count)
         {
             var ds = _DS;
+            var cfg = Setting.Current;
 
             var nvs = new Dictionary<String, Object>();
             nvs[nameof(type)] = type;
             nvs["score"] = ds.Score;
-            nvs["name"] = "{0}/{1}".F(Environment.UserName, Environment.MachineName);
+            //nvs["name"] = "{0}/{1}".F(Environment.UserName, Environment.MachineName);
+            nvs["name"] = cfg.Name;
 
             nvs["OS"] = Runtime.OSName;
 

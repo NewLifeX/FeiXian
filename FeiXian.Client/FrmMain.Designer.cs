@@ -66,6 +66,8 @@
             this.btnAdv = new System.Windows.Forms.Button();
             this.btnTest = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numThreads)).BeginInit();
@@ -108,6 +110,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtName);
+            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.chkUseSql);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.numCount);
@@ -117,7 +121,7 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(9, 49);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(565, 35);
+            this.panel1.Size = new System.Drawing.Size(819, 35);
             this.panel1.TabIndex = 2;
             // 
             // chkUseSql
@@ -252,9 +256,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbReceive.Controls.Add(this.txtReceive);
-            this.gbReceive.Location = new System.Drawing.Point(6, 102);
+            this.gbReceive.Location = new System.Drawing.Point(6, 90);
             this.gbReceive.Name = "gbReceive";
-            this.gbReceive.Size = new System.Drawing.Size(1016, 560);
+            this.gbReceive.Size = new System.Drawing.Size(1016, 572);
             this.gbReceive.TabIndex = 17;
             this.gbReceive.TabStop = false;
             // 
@@ -265,7 +269,7 @@
             this.txtReceive.HideSelection = false;
             this.txtReceive.Location = new System.Drawing.Point(3, 17);
             this.txtReceive.Name = "txtReceive";
-            this.txtReceive.Size = new System.Drawing.Size(1010, 540);
+            this.txtReceive.Size = new System.Drawing.Size(1010, 552);
             this.txtReceive.TabIndex = 1;
             this.txtReceive.Text = "";
             // 
@@ -417,6 +421,22 @@
             this.timer1.Interval = 500;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(485, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 12);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "友好名称：";
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(556, 9);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(260, 21);
+            this.txtName.TabIndex = 22;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -485,6 +505,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox chkUseSql;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Label label3;
     }
 }
 

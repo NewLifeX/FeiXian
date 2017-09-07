@@ -209,14 +209,20 @@ WriteAttribute("href", Tuple.Create(" href=\"", 1547), Tuple.Create("\"", 1556)
 WriteLiteral(">首页</a></li>\r\n                    <li><a");
 
 WriteAttribute("href", Tuple.Create(" href=\"", 1597), Tuple.Create("\"", 1617)
-, Tuple.Create(Tuple.Create("", 1604), Tuple.Create<System.Object, System.Int32>(Href("~/FeiXian.exe")
+, Tuple.Create(Tuple.Create("", 1604), Tuple.Create<System.Object, System.Int32>(Href("~/FeiXian.zip")
 , 1604), false)
 );
 
-WriteLiteral(">下载飞仙</a></li>\r\n                    <li>");
+WriteLiteral(">下载飞仙</a></li>\r\n                    <li><a");
+
+WriteLiteral(" href=\"http://git.newlifex.com/NewLife/FeiXian\"");
+
+WriteLiteral(" target=\"_blank\"");
+
+WriteLiteral(">源码</a></li>\r\n                    <li>");
 
             
-            #line 37 "..\..\Views\Shared\_Layout.cshtml"
+            #line 38 "..\..\Views\Shared\_Layout.cshtml"
                    Write(Html.ActionLink("关于", "About", "Home"));
 
             
@@ -232,9 +238,9 @@ WriteLiteral(" class=\"\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1820), Tuple.Create("\"", 1834)
-, Tuple.Create(Tuple.Create("", 1827), Tuple.Create<System.Object, System.Int32>(Href("~/Admin")
-, 1827), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 1923), Tuple.Create("\"", 1937)
+, Tuple.Create(Tuple.Create("", 1930), Tuple.Create<System.Object, System.Int32>(Href("~/Admin")
+, 1930), false)
 );
 
 WriteLiteral(">管理后台</a></li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </" +
@@ -247,7 +253,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 47 "..\..\Views\Shared\_Layout.cshtml"
+            #line 48 "..\..\Views\Shared\_Layout.cshtml"
    Write(RenderBody());
 
             
@@ -280,7 +286,7 @@ WriteLiteral(" href=\"#\"");
 WriteLiteral(">");
 
             
-            #line 54 "..\..\Views\Shared\_Layout.cshtml"
+            #line 55 "..\..\Views\Shared\_Layout.cshtml"
                                                                       Write(ViewBag.Language);
 
             
@@ -307,7 +313,7 @@ WriteLiteral(" class=\"muted\"");
 WriteLiteral(">&copy; 2002-");
 
             
-            #line 61 "..\..\Views\Shared\_Layout.cshtml"
+            #line 62 "..\..\Views\Shared\_Layout.cshtml"
                                                            Write(DateTime.Now.Year);
 
             
@@ -316,7 +322,7 @@ WriteLiteral(">&copy; 2002-");
 WriteLiteral(" ");
 
             
-            #line 61 "..\..\Views\Shared\_Layout.cshtml"
+            #line 62 "..\..\Views\Shared\_Layout.cshtml"
                                                                               Write(cfg.Company);
 
             
@@ -324,23 +330,23 @@ WriteLiteral(" ");
             #line hidden
 WriteLiteral("</p></div>\r\n        </div>\r\n    </div>\r\n\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2624), Tuple.Create("\"", 2662)
-, Tuple.Create(Tuple.Create("", 2630), Tuple.Create<System.Object, System.Int32>(Href("~/Content/js/jquery-2.1.3.min.js")
-, 2630), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 2727), Tuple.Create("\"", 2765)
+, Tuple.Create(Tuple.Create("", 2733), Tuple.Create<System.Object, System.Int32>(Href("~/Content/js/jquery-2.1.3.min.js")
+, 2733), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2686), Tuple.Create("\"", 2731)
-, Tuple.Create(Tuple.Create("", 2692), Tuple.Create<System.Object, System.Int32>(Href("~/Content/bootstrap/js/bootstrap.min.js")
-, 2692), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 2789), Tuple.Create("\"", 2834)
+, Tuple.Create(Tuple.Create("", 2795), Tuple.Create<System.Object, System.Int32>(Href("~/Content/bootstrap/js/bootstrap.min.js")
+, 2795), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2755), Tuple.Create("\"", 2811)
-, Tuple.Create(Tuple.Create("", 2761), Tuple.Create<System.Object, System.Int32>(Href("~/Content/bootstrap-switch/bootstrap-switch.min.js")
-, 2761), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 2858), Tuple.Create("\"", 2914)
+, Tuple.Create(Tuple.Create("", 2864), Tuple.Create<System.Object, System.Int32>(Href("~/Content/bootstrap-switch/bootstrap-switch.min.js")
+, 2864), false)
 );
 
 WriteLiteral("></script>\r\n");
@@ -348,7 +354,7 @@ WriteLiteral("></script>\r\n");
 WriteLiteral("    ");
 
             
-            #line 68 "..\..\Views\Shared\_Layout.cshtml"
+            #line 69 "..\..\Views\Shared\_Layout.cshtml"
 Write(RenderSection("scripts", required: false));
 
             

@@ -20,9 +20,9 @@ namespace FeiXian.Client
         [Description("密码")]
         public String Password { get; set; } = "";
 
-        /// <summary>模式</summary>
-        [Description("模式")]
-        public String Mode { get; set; } = "User";
+        /// <summary>名称</summary>
+        [Description("名称")]
+        public String Name { get; set; } = "{0}/{1}".F(Environment.UserName, Environment.MachineName);
 
         /// <summary>地址</summary>
         [Description("地址")]
