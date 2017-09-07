@@ -51,6 +51,7 @@ namespace ASP
             
             #line 3 "..\..\Views\Home\Index.cshtml"
   
+    var last = ViewBag.Last as IList<Record>;
 
             
             #line default
@@ -62,13 +63,13 @@ WriteLiteral(" class=\"row\"");
 WriteLiteral(">\r\n");
 
             
-            #line 9 "..\..\Views\Home\Index.cshtml"
+            #line 10 "..\..\Views\Home\Index.cshtml"
     
             
             #line default
             #line hidden
             
-            #line 9 "..\..\Views\Home\Index.cshtml"
+            #line 10 "..\..\Views\Home\Index.cshtml"
      foreach (var item in Model)
     {
 
@@ -78,7 +79,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        <h3>");
 
             
-            #line 11 "..\..\Views\Home\Index.cshtml"
+            #line 12 "..\..\Views\Home\Index.cshtml"
        Write(item.Key);
 
             
@@ -97,13 +98,13 @@ WriteLiteral(" class=\"table border-area\"");
 WriteLiteral(">\r\n");
 
             
-            #line 14 "..\..\Views\Home\Index.cshtml"
+            #line 15 "..\..\Views\Home\Index.cshtml"
                 
             
             #line default
             #line hidden
             
-            #line 14 "..\..\Views\Home\Index.cshtml"
+            #line 15 "..\..\Views\Home\Index.cshtml"
                  foreach (var rc in item.Value)
                 {
 
@@ -113,9 +114,9 @@ WriteLiteral(">\r\n");
 WriteLiteral("                    <tr>\r\n                        <td>\r\n                         " +
 "   <div><h3><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 443), Tuple.Create("\"", 452)
-, Tuple.Create(Tuple.Create("", 450), Tuple.Create<System.Object, System.Int32>(Href("~/")
-, 450), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 490), Tuple.Create("\"", 499)
+, Tuple.Create(Tuple.Create("", 497), Tuple.Create<System.Object, System.Int32>(Href("~/")
+, 497), false)
 );
 
 WriteLiteral(" title=\"每秒处理速度\"");
@@ -123,7 +124,7 @@ WriteLiteral(" title=\"每秒处理速度\"");
 WriteLiteral(">");
 
             
-            #line 18 "..\..\Views\Home\Index.cshtml"
+            #line 19 "..\..\Views\Home\Index.cshtml"
                                                             Write(rc.Score.ToString("n0"));
 
             
@@ -132,7 +133,7 @@ WriteLiteral(">");
 WriteLiteral("</a><sub>TPS</sub> &nbsp; ");
 
             
-            #line 18 "..\..\Views\Home\Index.cshtml"
+            #line 19 "..\..\Views\Home\Index.cshtml"
                                                                                                               Write(rc.Name);
 
             
@@ -141,7 +142,7 @@ WriteLiteral("</a><sub>TPS</sub> &nbsp; ");
 WriteLiteral("</h3></div>\r\n                            <div>");
 
             
-            #line 19 "..\..\Views\Home\Index.cshtml"
+            #line 20 "..\..\Views\Home\Index.cshtml"
                             Write(rc.Processor);
 
             
@@ -154,7 +155,7 @@ WriteLiteral(" class=\"text-big\"");
 WriteLiteral("> ");
 
             
-            #line 20 "..\..\Views\Home\Index.cshtml"
+            #line 21 "..\..\Views\Home\Index.cshtml"
                                               Write(rc.Config);
 
             
@@ -181,7 +182,7 @@ WriteLiteral(" style=\"color: deeppink;\"");
 WriteLiteral("></i> ");
 
             
-            #line 23 "..\..\Views\Home\Index.cshtml"
+            #line 24 "..\..\Views\Home\Index.cshtml"
                                                                                                                    Write(rc.Frequency.ToString("n0"));
 
             
@@ -200,7 +201,7 @@ WriteLiteral(" style=\"color: mediumpurple;\"");
 WriteLiteral("></i> ");
 
             
-            #line 24 "..\..\Views\Home\Index.cshtml"
+            #line 25 "..\..\Views\Home\Index.cshtml"
                                                                                                                       Write(rc.Memory.ToString("n0"));
 
             
@@ -214,7 +215,7 @@ WriteLiteral(" class=\"col-md-6 text-right\"");
 WriteLiteral(">");
 
             
-            #line 26 "..\..\Views\Home\Index.cshtml"
+            #line 27 "..\..\Views\Home\Index.cshtml"
                                                             Write(rc.CreateTime.ToFullString());
 
             
@@ -224,7 +225,7 @@ WriteLiteral("</div>\r\n                            </div>\r\n                  
 "              </tr>\r\n");
 
             
-            #line 30 "..\..\Views\Home\Index.cshtml"
+            #line 31 "..\..\Views\Home\Index.cshtml"
                 }
 
             
@@ -233,15 +234,139 @@ WriteLiteral("</div>\r\n                            </div>\r\n                  
 WriteLiteral("            </table>\r\n        </div>\r\n");
 
             
-            #line 33 "..\..\Views\Home\Index.cshtml"
+            #line 34 "..\..\Views\Home\Index.cshtml"
     }
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n    ");
+WriteLiteral("\r\n    <div");
 
-WriteLiteral("\r\n</div>");
+WriteLiteral(" class=\"col-md-4\"");
+
+WriteLiteral(">\r\n        <table");
+
+WriteLiteral(" class=\"table border-area\"");
+
+WriteLiteral(">\r\n            <thead>最新提交</thead>\r\n");
+
+            
+            #line 39 "..\..\Views\Home\Index.cshtml"
+            
+            
+            #line default
+            #line hidden
+            
+            #line 39 "..\..\Views\Home\Index.cshtml"
+             foreach (var rc in last)
+            {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                <tr>\r\n                    <td>\r\n                        <div><h3>" +
+"<a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1691), Tuple.Create("\"", 1700)
+, Tuple.Create(Tuple.Create("", 1698), Tuple.Create<System.Object, System.Int32>(Href("~/")
+, 1698), false)
+);
+
+WriteLiteral(" title=\"每秒处理速度\"");
+
+WriteLiteral(">");
+
+            
+            #line 43 "..\..\Views\Home\Index.cshtml"
+                                                        Write(rc.Score.ToString("n0"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</a><sub>TPS</sub> &nbsp; ");
+
+            
+            #line 43 "..\..\Views\Home\Index.cshtml"
+                                                                                                          Write(rc.Name);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</h3></div>\r\n                        <div>");
+
+            
+            #line 44 "..\..\Views\Home\Index.cshtml"
+                        Write(rc.Processor);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</div>\r\n                        <div>\r\n                            <div");
+
+WriteLiteral(" class=\"col-md-6\"");
+
+WriteLiteral(">\r\n                                <span");
+
+WriteLiteral(" title=\"主频\"");
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"glyphicon glyphicon-heart\"");
+
+WriteLiteral(" style=\"color: deeppink;\"");
+
+WriteLiteral("></i> ");
+
+            
+            #line 47 "..\..\Views\Home\Index.cshtml"
+                                                                                                               Write(rc.Frequency.ToString("n0"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" MHz</span>\r\n                                <span");
+
+WriteLiteral(" title=\"内部\"");
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"glyphicon glyphicon-star\"");
+
+WriteLiteral(" style=\"color: mediumpurple;\"");
+
+WriteLiteral("></i> ");
+
+            
+            #line 48 "..\..\Views\Home\Index.cshtml"
+                                                                                                                  Write(rc.Memory.ToString("n0"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" MB</span>\r\n                            </div>\r\n                            <div");
+
+WriteLiteral(" class=\"col-md-6 text-right\"");
+
+WriteLiteral(">");
+
+            
+            #line 50 "..\..\Views\Home\Index.cshtml"
+                                                        Write(rc.CreateTime.ToFullString());
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</div>\r\n                        </div>\r\n                    </td>\r\n              " +
+"  </tr>\r\n");
+
+            
+            #line 54 "..\..\Views\Home\Index.cshtml"
+            }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("        </table>\r\n    </div>\r\n</div>");
 
         }
     }

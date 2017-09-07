@@ -19,6 +19,8 @@ namespace FeiXian.Web.Controllers
                 if (list.Count > 0) dic.Add(item, list);
             }
 
+            ViewBag.Last = Record.GetLast(20);
+
             return View(dic);
         }
     }

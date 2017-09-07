@@ -206,10 +206,17 @@ WriteAttribute("href", Tuple.Create(" href=\"", 1547), Tuple.Create("\"", 1556)
 , 1554), false)
 );
 
-WriteLiteral(">首页</a></li>\r\n                    <li>");
+WriteLiteral(">首页</a></li>\r\n                    <li><a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1597), Tuple.Create("\"", 1617)
+, Tuple.Create(Tuple.Create("", 1604), Tuple.Create<System.Object, System.Int32>(Href("~/FeiXian.exe")
+, 1604), false)
+);
+
+WriteLiteral(">下载飞仙</a></li>\r\n                    <li>");
 
             
-            #line 36 "..\..\Views\Shared\_Layout.cshtml"
+            #line 37 "..\..\Views\Shared\_Layout.cshtml"
                    Write(Html.ActionLink("关于", "About", "Home"));
 
             
@@ -225,9 +232,9 @@ WriteLiteral(" class=\"\"");
 
 WriteLiteral("><a");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 1757), Tuple.Create("\"", 1771)
-, Tuple.Create(Tuple.Create("", 1764), Tuple.Create<System.Object, System.Int32>(Href("~/Admin")
-, 1764), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 1820), Tuple.Create("\"", 1834)
+, Tuple.Create(Tuple.Create("", 1827), Tuple.Create<System.Object, System.Int32>(Href("~/Admin")
+, 1827), false)
 );
 
 WriteLiteral(">管理后台</a></li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </" +
@@ -240,7 +247,7 @@ WriteLiteral(">\r\n");
 WriteLiteral("        ");
 
             
-            #line 46 "..\..\Views\Shared\_Layout.cshtml"
+            #line 47 "..\..\Views\Shared\_Layout.cshtml"
    Write(RenderBody());
 
             
@@ -273,7 +280,7 @@ WriteLiteral(" href=\"#\"");
 WriteLiteral(">");
 
             
-            #line 53 "..\..\Views\Shared\_Layout.cshtml"
+            #line 54 "..\..\Views\Shared\_Layout.cshtml"
                                                                       Write(ViewBag.Language);
 
             
@@ -300,7 +307,7 @@ WriteLiteral(" class=\"muted\"");
 WriteLiteral(">&copy; 2002-");
 
             
-            #line 60 "..\..\Views\Shared\_Layout.cshtml"
+            #line 61 "..\..\Views\Shared\_Layout.cshtml"
                                                            Write(DateTime.Now.Year);
 
             
@@ -309,7 +316,7 @@ WriteLiteral(">&copy; 2002-");
 WriteLiteral(" ");
 
             
-            #line 60 "..\..\Views\Shared\_Layout.cshtml"
+            #line 61 "..\..\Views\Shared\_Layout.cshtml"
                                                                               Write(cfg.Company);
 
             
@@ -317,23 +324,23 @@ WriteLiteral(" ");
             #line hidden
 WriteLiteral("</p></div>\r\n        </div>\r\n    </div>\r\n\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2561), Tuple.Create("\"", 2599)
-, Tuple.Create(Tuple.Create("", 2567), Tuple.Create<System.Object, System.Int32>(Href("~/Content/js/jquery-2.1.3.min.js")
-, 2567), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 2624), Tuple.Create("\"", 2662)
+, Tuple.Create(Tuple.Create("", 2630), Tuple.Create<System.Object, System.Int32>(Href("~/Content/js/jquery-2.1.3.min.js")
+, 2630), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2623), Tuple.Create("\"", 2668)
-, Tuple.Create(Tuple.Create("", 2629), Tuple.Create<System.Object, System.Int32>(Href("~/Content/bootstrap/js/bootstrap.min.js")
-, 2629), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 2686), Tuple.Create("\"", 2731)
+, Tuple.Create(Tuple.Create("", 2692), Tuple.Create<System.Object, System.Int32>(Href("~/Content/bootstrap/js/bootstrap.min.js")
+, 2692), false)
 );
 
 WriteLiteral("></script>\r\n    <script");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 2692), Tuple.Create("\"", 2748)
-, Tuple.Create(Tuple.Create("", 2698), Tuple.Create<System.Object, System.Int32>(Href("~/Content/bootstrap-switch/bootstrap-switch.min.js")
-, 2698), false)
+WriteAttribute("src", Tuple.Create(" src=\"", 2755), Tuple.Create("\"", 2811)
+, Tuple.Create(Tuple.Create("", 2761), Tuple.Create<System.Object, System.Int32>(Href("~/Content/bootstrap-switch/bootstrap-switch.min.js")
+, 2761), false)
 );
 
 WriteLiteral("></script>\r\n");
@@ -341,7 +348,7 @@ WriteLiteral("></script>\r\n");
 WriteLiteral("    ");
 
             
-            #line 67 "..\..\Views\Shared\_Layout.cshtml"
+            #line 68 "..\..\Views\Shared\_Layout.cshtml"
 Write(RenderSection("scripts", required: false));
 
             

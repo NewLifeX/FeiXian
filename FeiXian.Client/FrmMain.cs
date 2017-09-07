@@ -178,6 +178,8 @@ namespace FeiXian.Client
 
                 this.Invoke(() => btnDbWrite.Enabled = true);
 
+                "测试完成，处理速度{0}tps".F(ds.Score).SpeechTip();
+
                 SendScore(Dal.DbType + "_Insert", cfg.Times);
             });
         }
@@ -204,14 +206,16 @@ namespace FeiXian.Client
 
             XTrace.WriteLine(nvs.ToJson(true));
 
+            var url = Setting.Current.Address.EnsureEnd("/add");
+
             var client = new WebClientX(true, true);
             client.Log = XTrace.Log;
-            client.UploadJsonAsync(Setting.Current.Address, nvs);
+            client.UploadJsonAsync(url, nvs);
         }
 
         private void btnDelete_Click(Object sender, EventArgs e)
         {
-            foreach (var item in ".".AsDirectory().GetAllFiles("*.db;*.db-shm;*.wal"))
+            foreach (var item in ".".AsDirectory().GetAllFiles("*.db;*.db-shm;*.wal;*.db-wal"))
             {
                 item.Delete();
             }
