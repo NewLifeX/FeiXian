@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using NewLife.Net;
 using NewLife.Serialization;
 
-namespace xLink.Client
+namespace FeiXian.Client
 {
     /// <summary>界面配置</summary>
     class UIConfig

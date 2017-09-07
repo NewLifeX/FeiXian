@@ -5,7 +5,7 @@ using System.Linq;
 using NewLife.Net;
 using NewLife.Xml;
 
-namespace xLink.Client
+namespace FeiXian.Client
 {
     /// <summary>配置</summary>
     [XmlConfigFile("Config\\Client.config")]

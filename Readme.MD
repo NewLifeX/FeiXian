@@ -15,4 +15,5 @@ SQLite、MySql、MSSQL、Oracle、PostgreSQL
 QQ群：1600800  
 
 ## 项目位置
-https://git.newlifex.com/NewLife/FeiXian
+中国 https://git.newlifex.com/NewLife/FeiXian  
+全球 https://github.com/NewLifeX/FeiXian  

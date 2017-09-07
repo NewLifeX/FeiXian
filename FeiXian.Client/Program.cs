@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using NewLife.Log;
 
-namespace xLink.Client
+namespace FeiXian.Client
 {
     static class Program
     {

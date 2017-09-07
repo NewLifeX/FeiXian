@@ -1,4 +1,4 @@
-﻿namespace xLink.Client
+﻿namespace FeiXian.Client
 {
     partial class FrmMain
     {
@@ -45,6 +45,7 @@
             this.miHexSend = new System.Windows.Forms.ToolStripMenuItem();
             this.mi清空2 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlSetting = new System.Windows.Forms.Panel();
+            this.cbMode = new System.Windows.Forms.ComboBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.gbReceive = new System.Windows.Forms.GroupBox();
@@ -65,9 +66,8 @@
             this.btnPing = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.pnlAction = new System.Windows.Forms.Panel();
-            this.btnTest = new System.Windows.Forms.Button();
-            this.cbMode = new System.Windows.Forms.ComboBox();
             this.btnAdv = new System.Windows.Forms.Button();
+            this.btnTest = new System.Windows.Forms.Button();
             this.gbSend.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numMutilSend)).BeginInit();
@@ -266,6 +266,18 @@
             this.pnlSetting.Size = new System.Drawing.Size(370, 31);
             this.pnlSetting.TabIndex = 18;
             // 
+            // cbMode
+            // 
+            this.cbMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMode.FormattingEnabled = true;
+            this.cbMode.Items.AddRange(new object[] {
+            "User",
+            "Device"});
+            this.cbMode.Location = new System.Drawing.Point(6, 7);
+            this.cbMode.Name = "cbMode";
+            this.cbMode.Size = new System.Drawing.Size(68, 20);
+            this.cbMode.TabIndex = 12;
+            // 
             // gbReceive
             // 
             this.gbReceive.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -416,28 +428,6 @@
             this.pnlAction.Size = new System.Drawing.Size(273, 31);
             this.pnlAction.TabIndex = 22;
             // 
-            // btnTest
-            // 
-            this.btnTest.Location = new System.Drawing.Point(139, 2);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(62, 29);
-            this.btnTest.TabIndex = 6;
-            this.btnTest.Text = "测试";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
-            // 
-            // cbMode
-            // 
-            this.cbMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMode.FormattingEnabled = true;
-            this.cbMode.Items.AddRange(new object[] {
-            "User",
-            "Device"});
-            this.cbMode.Location = new System.Drawing.Point(6, 7);
-            this.cbMode.Name = "cbMode";
-            this.cbMode.Size = new System.Drawing.Size(68, 20);
-            this.cbMode.TabIndex = 12;
-            // 
             // btnAdv
             // 
             this.btnAdv.Location = new System.Drawing.Point(207, 2);
@@ -447,6 +437,16 @@
             this.btnAdv.Text = "高级";
             this.btnAdv.UseVisualStyleBackColor = true;
             this.btnAdv.Click += new System.EventHandler(this.btnAdv_Click);
+            // 
+            // btnTest
+            // 
+            this.btnTest.Location = new System.Drawing.Point(139, 2);
+            this.btnTest.Name = "btnTest";
+            this.btnTest.Size = new System.Drawing.Size(62, 29);
+            this.btnTest.TabIndex = 6;
+            this.btnTest.Text = "测试";
+            this.btnTest.UseVisualStyleBackColor = true;
+            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // FrmMain
             // 
@@ -461,7 +461,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "物联网客户端";
+            this.Text = "代码之巅，天外飞仙";
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.gbSend.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

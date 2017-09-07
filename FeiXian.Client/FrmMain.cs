@@ -10,7 +10,7 @@ using NewLife.Reflection;
 using NewLife.Remoting;
 using NewLife.Threading;
 
-namespace xLink.Client
+namespace FeiXian.Client
 {
     public partial class FrmMain : Form
     {
@@ -40,7 +40,7 @@ namespace xLink.Client
             var cfg = Setting.Current;
             cbMode.SelectedItem = cfg.Mode;
 
-            if (cfg.IsNew) "欢迎使用物联网客户端！".SpeechTip();
+            if (cfg.IsNew) "代码之巅，天外飞仙！".SpeechTip();
 
             // 加载保存的颜色
             UIConfig.Apply(txtReceive);
