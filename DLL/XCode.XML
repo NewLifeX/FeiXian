@@ -472,6 +472,9 @@
         <member name="P:XCode.Common.DataSimulation.UseSql">
             <summary>直接执行SQL</summary>
         </member>
+        <member name="P:XCode.Common.DataSimulation.Score">
+            <summary>分数</summary>
+        </member>
         <member name="M:XCode.Common.DataSimulation.#ctor">
             <summary>实例化</summary>
         </member>

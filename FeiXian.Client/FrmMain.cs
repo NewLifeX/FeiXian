@@ -1,11 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32;
+using NewLife;
 using NewLife.Log;
 using NewLife.Reflection;
+using NewLife.Serialization;
+using NewLife.Web;
 using XCode.Common;
 using XCode.DataAccessLayer;
 using XCode.Demo;
@@ -15,6 +20,7 @@ namespace FeiXian.Client
     public partial class FrmMain : Form
     {
         DAL Dal;
+        DataSimulation _DS;
 
         #region 窗体
         public FrmMain()
@@ -102,12 +108,16 @@ namespace FeiXian.Client
                 Dal = DAL.Create(name);
                 XTrace.WriteLine("[{0}] [{1}] {2}", Dal.ConnName, Dal.DbType, Dal.ConnStr);
 
+                _DS = new DataSimulation<DemoEntity>();
+
                 pnlSetting.Enabled = false;
                 pnlAction.Enabled = true;
                 btnConnect.Text = "关闭";
             }
             else
             {
+                _DS = null;
+
                 pnlSetting.Enabled = true;
                 pnlAction.Enabled = false;
                 btnConnect.Text = "打开";
@@ -153,13 +163,12 @@ namespace FeiXian.Client
 
             DemoEntity.Meta.Table.ConnName = Dal.ConnName;
             DemoEntity.Meta.ConnName = Dal.ConnName;
-            var ds = new DataSimulation<DemoEntity>
-            {
-                Log = XTrace.Log,
-                BatchSize = cfg.BatchSize,
-                Threads = cfg.Threads,
-                UseSql = cfg.UseSql
-            };
+            var ds = _DS;
+
+            ds.Log = XTrace.Log;
+            ds.BatchSize = cfg.BatchSize;
+            ds.Threads = cfg.Threads;
+            ds.UseSql = cfg.UseSql;
 
             btnDbWrite.Enabled = false;
 
@@ -168,7 +177,36 @@ namespace FeiXian.Client
                 ds.Run(cfg.Times);
 
                 this.Invoke(() => btnDbWrite.Enabled = true);
+
+                SendScore(Dal.DbType + "_Insert", cfg.Times);
             });
+        }
+
+        private void SendScore(String type, Int32 count)
+        {
+            var ds = _DS;
+
+            var nvs = new Dictionary<String, Object>();
+            nvs[nameof(type)] = type;
+            nvs["score"] = ds.Score;
+            nvs["name"] = "{0}/{1}".F(Environment.UserName, Environment.MachineName);
+
+            nvs["OS"] = Runtime.OSName;
+
+            using (var reg = Registry.LocalMachine.OpenSubKey(@"HARDWARE\DESCRIPTION\System\CentralProcessor\0"))
+            {
+                nvs["Processor"] = (reg.GetValue("ProcessorNameString") + "").Trim();
+                nvs["Frequency"] = reg.GetValue("~MHz").ToInt() + "";
+            }
+            nvs["Memory"] = Runtime.PhysicalMemory;
+
+            nvs["Config"] = new { count, ds.Threads, ds.BatchSize, ds.UseSql }.ToJson();
+
+            XTrace.WriteLine(nvs.ToJson(true));
+
+            var client = new WebClientX(true, true);
+            client.Log = XTrace.Log;
+            client.UploadJsonAsync(Setting.Current.Address, nvs);
         }
 
         private void btnDelete_Click(Object sender, EventArgs e)

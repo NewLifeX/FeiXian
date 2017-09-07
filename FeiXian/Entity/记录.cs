@@ -11,6 +11,7 @@ namespace FeiXian.Entity
     [Serializable]
     [DataObject]
     [Description("记录")]
+    [BindIndex("IX_Record_Type_Enable_Score", false, "Type,Enable,Score")]
     [BindTable("Record", Description = "记录", ConnName = "FeiXian", DbType = DatabaseType.SqlServer)]
     public partial class Record : IRecord
     {
@@ -23,6 +24,14 @@ namespace FeiXian.Entity
         [BindColumn("ID", "编号", "int")]
         public Int32 ID { get { return _ID; } set { if (OnPropertyChanging(__.ID, value)) { _ID = value; OnPropertyChanged(__.ID); } } }
 
+        private String _Type;
+        /// <summary>类型</summary>
+        [DisplayName("类型")]
+        [Description("类型")]
+        [DataObjectField(false, false, true, 50)]
+        [BindColumn("Type", "类型", "nvarchar(50)")]
+        public String Type { get { return _Type; } set { if (OnPropertyChanging(__.Type, value)) { _Type = value; OnPropertyChanged(__.Type); } } }
+
         private String _Name;
         /// <summary>名称</summary>
         [DisplayName("名称")]
@@ -31,13 +40,13 @@ namespace FeiXian.Entity
         [BindColumn("Name", "名称", "nvarchar(50)", Master = true)]
         public String Name { get { return _Name; } set { if (OnPropertyChanging(__.Name, value)) { _Name = value; OnPropertyChanged(__.Name); } } }
 
-        private String _Type;
-        /// <summary>类型</summary>
-        [DisplayName("类型")]
-        [Description("类型")]
+        private String _OS;
+        /// <summary>系统</summary>
+        [DisplayName("系统")]
+        [Description("系统")]
         [DataObjectField(false, false, true, 50)]
-        [BindColumn("Type", "类型", "nvarchar(50)")]
-        public String Type { get { return _Type; } set { if (OnPropertyChanging(__.Type, value)) { _Type = value; OnPropertyChanged(__.Type); } } }
+        [BindColumn("OS", "系统", "nvarchar(50)")]
+        public String OS { get { return _OS; } set { if (OnPropertyChanging(__.OS, value)) { _OS = value; OnPropertyChanged(__.OS); } } }
 
         private String _Processor;
         /// <summary>处理器</summary>
@@ -70,6 +79,22 @@ namespace FeiXian.Entity
         [DataObjectField(false, false, false, 0)]
         [BindColumn("Score", "分数", "int")]
         public Int32 Score { get { return _Score; } set { if (OnPropertyChanging(__.Score, value)) { _Score = value; OnPropertyChanged(__.Score); } } }
+
+        private String _Config;
+        /// <summary>配置</summary>
+        [DisplayName("配置")]
+        [Description("配置")]
+        [DataObjectField(false, false, true, 50)]
+        [BindColumn("Config", "配置", "nvarchar(50)")]
+        public String Config { get { return _Config; } set { if (OnPropertyChanging(__.Config, value)) { _Config = value; OnPropertyChanged(__.Config); } } }
+
+        private Boolean _Enable;
+        /// <summary>启用</summary>
+        [DisplayName("启用")]
+        [Description("启用")]
+        [DataObjectField(false, false, false, 0)]
+        [BindColumn("Enable", "启用", "bit")]
+        public Boolean Enable { get { return _Enable; } set { if (OnPropertyChanging(__.Enable, value)) { _Enable = value; OnPropertyChanged(__.Enable); } } }
 
         private Int32 _CreateUserID;
         /// <summary>创建者</summary>
@@ -131,12 +156,15 @@ namespace FeiXian.Entity
                 switch (name)
                 {
                     case __.ID : return _ID;
-                    case __.Name : return _Name;
                     case __.Type : return _Type;
+                    case __.Name : return _Name;
+                    case __.OS : return _OS;
                     case __.Processor : return _Processor;
                     case __.Frequency : return _Frequency;
                     case __.Memory : return _Memory;
                     case __.Score : return _Score;
+                    case __.Config : return _Config;
+                    case __.Enable : return _Enable;
                     case __.CreateUserID : return _CreateUserID;
                     case __.CreateTime : return _CreateTime;
                     case __.CreateIP : return _CreateIP;
@@ -151,12 +179,15 @@ namespace FeiXian.Entity
                 switch (name)
                 {
                     case __.ID : _ID = Convert.ToInt32(value); break;
-                    case __.Name : _Name = Convert.ToString(value); break;
                     case __.Type : _Type = Convert.ToString(value); break;
+                    case __.Name : _Name = Convert.ToString(value); break;
+                    case __.OS : _OS = Convert.ToString(value); break;
                     case __.Processor : _Processor = Convert.ToString(value); break;
                     case __.Frequency : _Frequency = Convert.ToInt32(value); break;
                     case __.Memory : _Memory = Convert.ToInt32(value); break;
                     case __.Score : _Score = Convert.ToInt32(value); break;
+                    case __.Config : _Config = Convert.ToString(value); break;
+                    case __.Enable : _Enable = Convert.ToBoolean(value); break;
                     case __.CreateUserID : _CreateUserID = Convert.ToInt32(value); break;
                     case __.CreateTime : _CreateTime = Convert.ToDateTime(value); break;
                     case __.CreateIP : _CreateIP = Convert.ToString(value); break;
@@ -176,11 +207,14 @@ namespace FeiXian.Entity
             /// <summary>编号</summary>
             public static readonly Field ID = FindByName(__.ID);
 
+            /// <summary>类型</summary>
+            public static readonly Field Type = FindByName(__.Type);
+
             /// <summary>名称</summary>
             public static readonly Field Name = FindByName(__.Name);
 
-            /// <summary>类型</summary>
-            public static readonly Field Type = FindByName(__.Type);
+            /// <summary>系统</summary>
+            public static readonly Field OS = FindByName(__.OS);
 
             /// <summary>处理器</summary>
             public static readonly Field Processor = FindByName(__.Processor);
@@ -193,6 +227,12 @@ namespace FeiXian.Entity
 
             /// <summary>分数</summary>
             public static readonly Field Score = FindByName(__.Score);
+
+            /// <summary>配置</summary>
+            public static readonly Field Config = FindByName(__.Config);
+
+            /// <summary>启用</summary>
+            public static readonly Field Enable = FindByName(__.Enable);
 
             /// <summary>创建者</summary>
             public static readonly Field CreateUserID = FindByName(__.CreateUserID);
@@ -221,11 +261,14 @@ namespace FeiXian.Entity
             /// <summary>编号</summary>
             public const String ID = "ID";
 
+            /// <summary>类型</summary>
+            public const String Type = "Type";
+
             /// <summary>名称</summary>
             public const String Name = "Name";
 
-            /// <summary>类型</summary>
-            public const String Type = "Type";
+            /// <summary>系统</summary>
+            public const String OS = "OS";
 
             /// <summary>处理器</summary>
             public const String Processor = "Processor";
@@ -238,6 +281,12 @@ namespace FeiXian.Entity
 
             /// <summary>分数</summary>
             public const String Score = "Score";
+
+            /// <summary>配置</summary>
+            public const String Config = "Config";
+
+            /// <summary>启用</summary>
+            public const String Enable = "Enable";
 
             /// <summary>创建者</summary>
             public const String CreateUserID = "CreateUserID";
@@ -267,11 +316,14 @@ namespace FeiXian.Entity
         /// <summary>编号</summary>
         Int32 ID { get; set; }
 
+        /// <summary>类型</summary>
+        String Type { get; set; }
+
         /// <summary>名称</summary>
         String Name { get; set; }
 
-        /// <summary>类型</summary>
-        String Type { get; set; }
+        /// <summary>系统</summary>
+        String OS { get; set; }
 
         /// <summary>处理器</summary>
         String Processor { get; set; }
@@ -284,6 +336,12 @@ namespace FeiXian.Entity
 
         /// <summary>分数</summary>
         Int32 Score { get; set; }
+
+        /// <summary>配置</summary>
+        String Config { get; set; }
+
+        /// <summary>启用</summary>
+        Boolean Enable { get; set; }
 
         /// <summary>创建者</summary>
         Int32 CreateUserID { get; set; }
