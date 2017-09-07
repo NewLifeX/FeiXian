@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Tables Version="9.6.6459.35847" Output="Entity" NameSpace="FeiXian.Entity" ConnName="">
+  <Table Name="Record" Description="记录" DbType="SqlServer">
+    <Columns>
+      <Column Name="ID" DataType="Int32" Identity="True" PrimaryKey="True" Description="编号" />
+      <Column Name="Name" DataType="String" Master="True" Description="名称" />
+      <Column Name="Type" DataType="String" Description="类型" />
+      <Column Name="Processor" DataType="String" Description="处理器" />
+      <Column Name="Frequency" DataType="Int32" Description="频率。单位M" />
+      <Column Name="Memory" DataType="Int32" Description="内存。单位M字节" />
+      <Column Name="Score" DataType="Int32" Description="分数" />
+      <Column Name="CreateUserID" DataType="Int32" Description="创建者" />
+      <Column Name="CreateTime" DataType="DateTime" Description="创建时间" />
+      <Column Name="CreateIP" DataType="String" Description="创建地址" />
+      <Column Name="UpdateUserID" DataType="Int32" Description="更新者" />
+      <Column Name="UpdateTime" DataType="DateTime" Description="更新时间" />
+      <Column Name="UpdateIP" DataType="String" Description="更新地址" />
+    </Columns>
+  </Table>
+</Tables>
