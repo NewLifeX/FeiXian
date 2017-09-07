@@ -40,21 +40,21 @@ namespace FeiXian.Client
         [Description("发送内容")]
         public String SendContent { get; set; } = "新生命开发团队，学无先后达者为师";
 
-        /// <summary>发送次数</summary>
-        [Description("发送次数")]
-        public Int32 SendTimes { get; set; } = 1;
+        /// <summary>次数</summary>
+        [Description("次数")]
+        public Int32 Times { get; set; } = 100000;
 
-        /// <summary>发送间隔。毫秒</summary>
-        [Description("发送间隔。毫秒")]
-        public Int32 SendSleep { get; set; } = 1000;
+        /// <summary>批大小</summary>
+        [Description("批大小")]
+        public Int32 BatchSize { get; set; } = 1000;
 
-        /// <summary>发送用户数</summary>
-        [Description("发送用户数")]
-        public Int32 SendUsers { get; set; } = 10000;
+        /// <summary>线程数</summary>
+        [Description("线程数")]
+        public Int32 Threads { get; set; } = 1;
 
-        /// <summary>显示应用日志</summary>
-        [Description("显示应用日志")]
-        public Boolean ShowLog { get; set; } = true;
+        /// <summary>使用SQL</summary>
+        [Description("使用SQL")]
+        public Boolean UseSql { get; set; } = true;
 
         /// <summary>显示编码日志</summary>
         [Description("显示编码日志")]
