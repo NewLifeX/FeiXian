@@ -1,0 +1,27 @@
+﻿@using System;
+@using NewLife.Common;
+@{
+    var title = ViewBag.Title as String;
+    if (title.IsNullOrEmpty())
+    {
+        title = "天外飞仙";
+    }
+}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>@title</title>
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>

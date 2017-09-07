@@ -4,7 +4,7 @@ using FeiXian.Entity;
 using NewLife.Cube;
 using NewLife.Web;
 
-namespace FeiXian.Web.Controllers
+namespace FeiXian.Web.Areas.Controllers
 {
     public class RecordController : EntityController<Record>
     {
