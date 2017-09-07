@@ -69,6 +69,11 @@ namespace FeiXian.Entity
             return FindAll(exp, p);
         }
 
+        public static IList<Record> GetTop(String type, Int32 count)
+        {
+            return FindAll(_.Type == type & _.Enable == true, _.Score.Desc(), null, 0, count);
+        }
+
         /// <summary>类别名实体缓存，异步，缓存10分钟</summary>
         static FieldCache<Record> TypeCache = new FieldCache<Record>(_.Type);
 

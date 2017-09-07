@@ -26,6 +26,12 @@ namespace ASP
     using System.Web.Security;
     using System.Web.UI;
     using System.Web.WebPages;
+    
+    #line 2 "..\..\Views\Home\Index.cshtml"
+    using FeiXian.Entity;
+    
+    #line default
+    #line hidden
     using NewLife;
     using NewLife.Cube;
     using NewLife.Reflection;
@@ -35,7 +41,7 @@ namespace ASP
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("RazorGenerator", "2.0.0.0")]
     [System.Web.WebPages.PageVirtualPathAttribute("~/Views/Home/Index.cshtml")]
-    public partial class _Views_Home_Index_cshtml : System.Web.Mvc.WebViewPage<dynamic>
+    public partial class _Views_Home_Index_cshtml : System.Web.Mvc.WebViewPage<Dictionary<String, IList<Record>>>
     {
         public _Views_Home_Index_cshtml()
         {
@@ -43,13 +49,199 @@ namespace ASP
         public override void Execute()
         {
             
-            #line 1 "..\..\Views\Home\Index.cshtml"
+            #line 3 "..\..\Views\Home\Index.cshtml"
   
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n<div>\r\n    <h1>代码之巅，天外飞仙！</h1>\r\n</div>");
+WriteLiteral("\r\n<div>\r\n    <h1>代码之巅，天外飞仙！</h1>\r\n</div>\r\n<div");
+
+WriteLiteral(" class=\"row\"");
+
+WriteLiteral(">\r\n");
+
+            
+            #line 9 "..\..\Views\Home\Index.cshtml"
+    
+            
+            #line default
+            #line hidden
+            
+            #line 9 "..\..\Views\Home\Index.cshtml"
+     foreach (var item in Model)
+    {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("        <h3>");
+
+            
+            #line 11 "..\..\Views\Home\Index.cshtml"
+       Write(item.Key);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</h3>\r\n");
+
+WriteLiteral("        <div");
+
+WriteLiteral(" class=\"col-md-8\"");
+
+WriteLiteral(">\r\n            <table");
+
+WriteLiteral(" class=\"table border-area\"");
+
+WriteLiteral(">\r\n");
+
+            
+            #line 14 "..\..\Views\Home\Index.cshtml"
+                
+            
+            #line default
+            #line hidden
+            
+            #line 14 "..\..\Views\Home\Index.cshtml"
+                 foreach (var rc in item.Value)
+                {
+
+            
+            #line default
+            #line hidden
+WriteLiteral("                    <tr>\r\n                        <td>\r\n                         " +
+"   <div><h3><a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 443), Tuple.Create("\"", 452)
+, Tuple.Create(Tuple.Create("", 450), Tuple.Create<System.Object, System.Int32>(Href("~/")
+, 450), false)
+);
+
+WriteLiteral(" title=\"每秒处理速度\"");
+
+WriteLiteral(">");
+
+            
+            #line 18 "..\..\Views\Home\Index.cshtml"
+                                                            Write(rc.Score.ToString("n0"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</a><sub>TPS</sub> &nbsp; ");
+
+            
+            #line 18 "..\..\Views\Home\Index.cshtml"
+                                                                                                              Write(rc.Name);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</h3></div>\r\n                            <div>");
+
+            
+            #line 19 "..\..\Views\Home\Index.cshtml"
+                            Write(rc.Processor);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</div>\r\n                            <div");
+
+WriteLiteral(" class=\"text-big\"");
+
+WriteLiteral("> ");
+
+            
+            #line 20 "..\..\Views\Home\Index.cshtml"
+                                              Write(rc.Config);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</div>\r\n                            <div");
+
+WriteLiteral(" style=\"margin-top: 10px;\"");
+
+WriteLiteral(">\r\n                                <div");
+
+WriteLiteral(" class=\"col-md-6\"");
+
+WriteLiteral(">\r\n                                    <span");
+
+WriteLiteral(" title=\"主频\"");
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"glyphicon glyphicon-heart\"");
+
+WriteLiteral(" style=\"color: deeppink;\"");
+
+WriteLiteral("></i> ");
+
+            
+            #line 23 "..\..\Views\Home\Index.cshtml"
+                                                                                                                   Write(rc.Frequency.ToString("n0"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" MHz</span>\r\n                                    <span");
+
+WriteLiteral(" title=\"内部\"");
+
+WriteLiteral("><i");
+
+WriteLiteral(" class=\"glyphicon glyphicon-star\"");
+
+WriteLiteral(" style=\"color: mediumpurple;\"");
+
+WriteLiteral("></i> ");
+
+            
+            #line 24 "..\..\Views\Home\Index.cshtml"
+                                                                                                                      Write(rc.Memory.ToString("n0"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" MB</span>\r\n                                </div>\r\n                             " +
+"   <div");
+
+WriteLiteral(" class=\"col-md-6 text-right\"");
+
+WriteLiteral(">");
+
+            
+            #line 26 "..\..\Views\Home\Index.cshtml"
+                                                            Write(rc.CreateTime.ToFullString());
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</div>\r\n                            </div>\r\n                        </td>\r\n      " +
+"              </tr>\r\n");
+
+            
+            #line 30 "..\..\Views\Home\Index.cshtml"
+                }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("            </table>\r\n        </div>\r\n");
+
+            
+            #line 33 "..\..\Views\Home\Index.cshtml"
+    }
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    ");
+
+WriteLiteral("\r\n</div>");
 
         }
     }
