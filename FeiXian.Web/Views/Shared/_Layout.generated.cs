@@ -56,47 +56,44 @@ namespace ASP
             
             #line 3 "..\..\Views\Shared\_Layout.cshtml"
   
-    var title = ViewBag.Title as String;
-    if (title.IsNullOrEmpty())
-    {
-        title = "天外飞仙";
-    }
+    var cfg = NewLife.Common.SysConfig.Current;
+    var title = ViewBag.Title + "";
+    if (title != "" && !title.EndsWith(" - ")) { title += " - "; }
+    title += cfg.DisplayName;
+    var title2 = ViewBag.Title2 as String;
+    if (!title2.IsNullOrEmpty()) { title += " - " + title2; }
 
             
             #line default
             #line hidden
 WriteLiteral("\r\n<!DOCTYPE html>\r\n<html");
 
-WriteLiteral(" lang=\"zh-CN\"");
+WriteLiteral(" xmlns=\"http://www.w3.org/1999/xhtml\"");
+
+WriteAttribute("lang", Tuple.Create(" lang=\"", 398), Tuple.Create("\"", 418)
+            
+            #line 12 "..\..\Views\Shared\_Layout.cshtml"
+, Tuple.Create(Tuple.Create("", 405), Tuple.Create<System.Object, System.Int32>(ViewBag.Lang
+            
+            #line default
+            #line hidden
+, 405), false)
+);
 
 WriteLiteral(">\r\n<head>\r\n    <meta");
 
-WriteLiteral(" http-equiv=\"Content-Type\"");
+WriteLiteral(" charset=\"utf-8\"");
 
-WriteLiteral(" content=\"text/html; charset=UTF-8\"");
-
-WriteLiteral(">\r\n    <meta");
+WriteLiteral(" />\r\n    <meta");
 
 WriteLiteral(" name=\"viewport\"");
 
 WriteLiteral(" content=\"width=device-width, initial-scale=1.0\"");
 
-WriteLiteral(">\r\n    <meta");
-
-WriteLiteral(" name=\"description\"");
-
-WriteLiteral(" content=\"\"");
-
-WriteLiteral(">\r\n    <meta");
-
-WriteLiteral(" name=\"author\"");
-
-WriteLiteral(" content=\"\"");
-
-WriteLiteral(">\r\n\r\n    <title>");
+WriteLiteral(" />\r\n    <title>");
 
             
-            #line 18 "..\..\Views\Shared\_Layout.cshtml"
+            #line 16 "..\..\Views\Shared\_Layout.cshtml"
       Write(title);
 
             
@@ -104,50 +101,253 @@ WriteLiteral(">\r\n\r\n    <title>");
             #line hidden
 WriteLiteral("</title>\r\n    <link");
 
-WriteLiteral(" rel=\"shortcut icon\"");
+WriteLiteral(" rel=\"stylesheet\"");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 492), Tuple.Create("\"", 512)
-, Tuple.Create(Tuple.Create("", 499), Tuple.Create<System.Object, System.Int32>(Href("~/favicon.ico")
-, 499), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 591), Tuple.Create("\"", 639)
+, Tuple.Create(Tuple.Create("", 598), Tuple.Create<System.Object, System.Int32>(Href("~/Content/bootstrap/css/bootstrap.min.css")
+, 598), false)
 );
-
-WriteLiteral(" type=\"image/x-icon\"");
 
 WriteLiteral(" />\r\n    <link");
 
-WriteAttribute("href", Tuple.Create(" href=\"", 547), Tuple.Create("\"", 573)
-, Tuple.Create(Tuple.Create("", 554), Tuple.Create<System.Object, System.Int32>(Href("~/css/bootstrap.css")
-, 554), false)
+WriteLiteral(" rel=\"stylesheet\"");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 671), Tuple.Create("\"", 729)
+, Tuple.Create(Tuple.Create("", 678), Tuple.Create<System.Object, System.Int32>(Href("~/Content/bootstrap-switch/bootstrap-switch.min.css")
+, 678), false)
 );
+
+WriteLiteral(" />\r\n    <link");
 
 WriteLiteral(" rel=\"stylesheet\"");
 
-WriteLiteral(">\r\n    <script");
-
-WriteAttribute("src", Tuple.Create(" src=\"", 605), Tuple.Create("\"", 629)
-, Tuple.Create(Tuple.Create("", 611), Tuple.Create<System.Object, System.Int32>(Href("~/js/jquery.min.js")
-, 611), false)
+WriteAttribute("href", Tuple.Create(" href=\"", 761), Tuple.Create("\"", 786)
+, Tuple.Create(Tuple.Create("", 768), Tuple.Create<System.Object, System.Int32>(Href("~/Content/cube.css")
+, 768), false)
 );
 
-WriteLiteral("></script>\r\n    <script");
+WriteLiteral(" />\r\n</head>\r\n<body>\r\n    <div");
 
-WriteAttribute("src", Tuple.Create(" src=\"", 653), Tuple.Create("\"", 680)
-, Tuple.Create(Tuple.Create("", 659), Tuple.Create<System.Object, System.Int32>(Href("~/js/bootstrap.min.js")
-, 659), false)
+WriteLiteral(" class=\"navbar navbar-default\"");
+
+WriteLiteral(">\r\n        <div");
+
+WriteLiteral(" class=\"container\"");
+
+WriteLiteral(">\r\n            <div");
+
+WriteLiteral(" class=\"navbar-header\"");
+
+WriteLiteral(">\r\n                <button");
+
+WriteLiteral(" class=\"navbar-toggle\"");
+
+WriteLiteral(" type=\"button\"");
+
+WriteLiteral(" data-toggle=\"collapse\"");
+
+WriteLiteral(" data-target=\".navbar-responsive-collapse\"");
+
+WriteLiteral(">\r\n                    <span");
+
+WriteLiteral(" class=\"sr-only\"");
+
+WriteLiteral("></span>\r\n                    <span");
+
+WriteLiteral(" class=\"icon-bar\"");
+
+WriteLiteral("></span>\r\n                    <span");
+
+WriteLiteral(" class=\"icon-bar\"");
+
+WriteLiteral("></span>\r\n                    <span");
+
+WriteLiteral(" class=\"icon-bar\"");
+
+WriteLiteral("></span>\r\n                </button>\r\n                <a");
+
+WriteLiteral(" class=\"navbar-brand\"");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1324), Tuple.Create("\"", 1333)
+, Tuple.Create(Tuple.Create("", 1331), Tuple.Create<System.Object, System.Int32>(Href("~/")
+, 1331), false)
 );
 
-WriteLiteral("></script>\r\n</head>\r\n<body>\r\n");
-
-WriteLiteral("    ");
+WriteLiteral(">");
 
             
-            #line 25 "..\..\Views\Shared\_Layout.cshtml"
-Write(RenderBody());
+            #line 31 "..\..\Views\Shared\_Layout.cshtml"
+                                             Write(cfg.DisplayName);
 
             
             #line default
             #line hidden
-WriteLiteral("\r\n</body>\r\n</html>");
+WriteLiteral("<sub>");
+
+            
+            #line 31 "..\..\Views\Shared\_Layout.cshtml"
+                                                                  Write(cfg.Name);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</sub></a>\r\n            </div>\r\n            <div");
+
+WriteLiteral(" class=\"navbar-collapse collapse navbar-responsive-collapse\"");
+
+WriteLiteral(">\r\n                <ul");
+
+WriteLiteral(" class=\"nav navbar-nav\"");
+
+WriteLiteral(">\r\n                    <li><a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1547), Tuple.Create("\"", 1556)
+, Tuple.Create(Tuple.Create("", 1554), Tuple.Create<System.Object, System.Int32>(Href("~/")
+, 1554), false)
+);
+
+WriteLiteral(">首页</a></li>\r\n                    <li>");
+
+            
+            #line 36 "..\..\Views\Shared\_Layout.cshtml"
+                   Write(Html.ActionLink("关于", "About", "Home"));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</li>\r\n                </ul>\r\n                <ul");
+
+WriteLiteral(" class=\"nav navbar-nav navbar-right\"");
+
+WriteLiteral(">\r\n                    <li");
+
+WriteLiteral(" class=\"\"");
+
+WriteLiteral("><a");
+
+WriteAttribute("href", Tuple.Create(" href=\"", 1757), Tuple.Create("\"", 1771)
+, Tuple.Create(Tuple.Create("", 1764), Tuple.Create<System.Object, System.Int32>(Href("~/Admin")
+, 1764), false)
+);
+
+WriteLiteral(">管理后台</a></li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n    </" +
+"div>\r\n\r\n    <div");
+
+WriteLiteral(" class=\"container\"");
+
+WriteLiteral(">\r\n");
+
+WriteLiteral("        ");
+
+            
+            #line 46 "..\..\Views\Shared\_Layout.cshtml"
+   Write(RenderBody());
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n    </div>\r\n\r\n    <div");
+
+WriteLiteral(" class=\"container footer\"");
+
+WriteLiteral(">\r\n        <div");
+
+WriteLiteral(" class=\"page-divider\"");
+
+WriteLiteral("></div>\r\n        <div");
+
+WriteLiteral(" class=\"clearfix\"");
+
+WriteLiteral(">\r\n            <div");
+
+WriteLiteral(" class=\"pull-right btn-group dropup\"");
+
+WriteLiteral(">\r\n                <a");
+
+WriteLiteral(" class=\"dropdown-toggle\"");
+
+WriteLiteral(" data-toggle=\"dropdown\"");
+
+WriteLiteral(" href=\"#\"");
+
+WriteLiteral(">");
+
+            
+            #line 53 "..\..\Views\Shared\_Layout.cshtml"
+                                                                      Write(ViewBag.Language);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" <span");
+
+WriteLiteral(" class=\"caret\"");
+
+WriteLiteral("></span></a>\r\n                <ul");
+
+WriteLiteral(" class=\"dropdown-menu\"");
+
+WriteLiteral(">\r\n                    <li>zh-cn</li>\r\n                    <li>en-us</li>\r\n      " +
+"              <li>fr-fr</li>\r\n                </ul>\r\n            </div>\r\n       " +
+"     <div");
+
+WriteLiteral(" class=\"pull-left\"");
+
+WriteLiteral("><p");
+
+WriteLiteral(" class=\"muted\"");
+
+WriteLiteral(">&copy; 2002-");
+
+            
+            #line 60 "..\..\Views\Shared\_Layout.cshtml"
+                                                           Write(DateTime.Now.Year);
+
+            
+            #line default
+            #line hidden
+WriteLiteral(" ");
+
+            
+            #line 60 "..\..\Views\Shared\_Layout.cshtml"
+                                                                              Write(cfg.Company);
+
+            
+            #line default
+            #line hidden
+WriteLiteral("</p></div>\r\n        </div>\r\n    </div>\r\n\r\n    <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 2561), Tuple.Create("\"", 2599)
+, Tuple.Create(Tuple.Create("", 2567), Tuple.Create<System.Object, System.Int32>(Href("~/Content/js/jquery-2.1.3.min.js")
+, 2567), false)
+);
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 2623), Tuple.Create("\"", 2668)
+, Tuple.Create(Tuple.Create("", 2629), Tuple.Create<System.Object, System.Int32>(Href("~/Content/bootstrap/js/bootstrap.min.js")
+, 2629), false)
+);
+
+WriteLiteral("></script>\r\n    <script");
+
+WriteAttribute("src", Tuple.Create(" src=\"", 2692), Tuple.Create("\"", 2748)
+, Tuple.Create(Tuple.Create("", 2698), Tuple.Create<System.Object, System.Int32>(Href("~/Content/bootstrap-switch/bootstrap-switch.min.js")
+, 2698), false)
+);
+
+WriteLiteral("></script>\r\n");
+
+WriteLiteral("    ");
+
+            
+            #line 67 "..\..\Views\Shared\_Layout.cshtml"
+Write(RenderSection("scripts", required: false));
+
+            
+            #line default
+            #line hidden
+WriteLiteral("\r\n</body>\r\n</html>\r\n");
 
         }
     }
